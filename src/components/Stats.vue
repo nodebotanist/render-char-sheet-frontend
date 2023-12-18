@@ -10,12 +10,12 @@ const cha = ref(10);
 
 const diceRollEvent = defineEmits(["diceRoll"]);
 function emitDiceRollEvent(value) {
-    diceRollEvent("diceRoll", value);
+  diceRollEvent("diceRoll", value);
 }
 </script>
 
 <template>
-    <div class="pure-g" id="stats">
+  <div class="pure-g" id="stats">
     <div class="pure-u-1"><h2>Stats</h2></div>
     <div class="pure-u-1-2">
       <span>Strength: </span>
@@ -29,14 +29,17 @@ function emitDiceRollEvent(value) {
     </div>
     <div class="pure-u-1-2">
       <span>Strength modifier: {{ Math.floor((str - 10) / 2) }}</span>
-      <button @click="emitDiceRollEvent('2d20dl1'+ (Math.floor((str - 10) / 2)== 0 ? '' : ('+'+ Math.floor((str - 10) / 2))))">
-        Disadvantage  
-      </button>
-      <button @click="emitDiceRollEvent('1d20'+ (Math.floor((str - 10) / 2)== 0 ? '' : ('+'+ Math.floor((str - 10) / 2))))">
+      <button
+        @click="
+          emitDiceRollEvent(
+            '1d20' +
+              (Math.floor((str - 10) / 2) == 0
+                ? ''
+                : '+' + Math.floor((str - 10) / 2)),
+          )
+        "
+      >
         Roll
-      </button>
-      <button @click="emitDiceRollEvent('2d20kh1'+ (Math.floor((str - 10) / 2)== 0 ? '' : ('+'+ Math.floor((str - 10) / 2))))">
-        Advantage
       </button>
     </div>
     <div class="pure-u-1-2">
@@ -51,14 +54,17 @@ function emitDiceRollEvent(value) {
     </div>
     <div class="pure-1-2">
       <span>Dexterity modifier: {{ Math.floor((dex - 10) / 2) }}</span>
-      <button @click="emitDiceRollEvent('2d20d1'+ (Math.floor((dex - 10) / 2)== 0 ? '' : ('+'+ Math.floor((dex - 10) / 2))))">
-        Disadvantage  
-      </button>
-      <button @click="emitDiceRollEvent('1d20'+ (Math.floor((dex - 10) / 2)== 0 ? '' : ('+'+ Math.floor((dex - 10) / 2))))">
+      <button
+        @click="
+          emitDiceRollEvent(
+            '1d20' +
+              (Math.floor((dex - 10) / 2) == 0
+                ? ''
+                : '+' + Math.floor((dex - 10) / 2)),
+          )
+        "
+      >
         Roll
-      </button>
-      <button @click="emitDiceRollEvent('2d20k1'+ (Math.floor((dex - 10) / 2)== 0 ? '' : ('+'+ Math.floor((dex - 10) / 2))))">
-        Advantage
       </button>
     </div>
     <div class="pure-u-1-2">

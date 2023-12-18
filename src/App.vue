@@ -2,13 +2,13 @@
 import DiceBox from "./components/DiceBox.vue";
 import Stats from "./components/Stats.vue";
 
-function rollDice(value) { 
+function rollDice(value) {
   DiceBox.functions.rollDice(value);
 }
 </script>
 
 <template>
-  <div class="pure-g" >
+  <div class="pure-g">
     <div class="pure-u-1-2">
       <h1>Character Sheet</h1>
       <label for="character-name">Character Name:</label>
@@ -18,5 +18,5 @@ function rollDice(value) {
       <DiceBox />
     </div>
   </div>
-  <Stats v-on:diceRoll=rollDice></Stats>
+  <Stats v-on:diceRoll="rollDice"></Stats>
 </template>
