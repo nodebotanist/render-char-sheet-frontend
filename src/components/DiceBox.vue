@@ -41,10 +41,6 @@ export default {
       isRolling = false;      
       emit("diceResult", results)
     };
-
-    function announceResults(results){
-      diceResultEvent("diceResult", results);
-    }
   },
 };
 </script>

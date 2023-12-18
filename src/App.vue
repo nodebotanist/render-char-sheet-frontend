@@ -1,12 +1,20 @@
 <script setup>
 import DiceBox from "./components/DiceBox.vue";
 import Stats from "./components/Stats.vue";
+import { ref } from "vue";
 
-function rollDice(value) {
-  DiceBox.functions.rollDice(value);
+const characterName = ref("");
+const currentRoll = ref("");
+const currentRollType = ref("");
+
+function rollDice(roll) {
+  currentRollType.value = roll.type;
+  currentRoll.value = roll.roll;
+  DiceBox.functions.rollDice(roll.roll);
 }
 
 function diceResult(results) {
+  console.log(`${characterName.value} rolled ${currentRoll.value} as a ${currentRollType.value} check and got a ${results[0].value}!`)
   console.log(results);
 }
 </script>
@@ -16,7 +24,7 @@ function diceResult(results) {
     <div class="pure-u-1-2">
       <h1>Character Sheet</h1>
       <label for="character-name">Character Name:</label>
-      <input type="text" placeholder="Character Name" id="character-name" />
+      <input type="text" placeholder="Character Name" v-model="characterName" id="character-name" />
     </div>
     <div class="pure-u-1-2">
       <DiceBox @diceResult="diceResult" />

@@ -31,12 +31,13 @@ function emitDiceRollEvent(value) {
       <span>Strength modifier: {{ Math.floor((str - 10) / 2) }}</span>
       <button
         @click="
-          emitDiceRollEvent(
-            '1d20' +
+          emitDiceRollEvent({
+            type: 'Strength',   
+            roll: '1d20' +
               (Math.floor((str - 10) / 2) == 0
                 ? ''
                 : '+' + Math.floor((str - 10) / 2)),
-          )
+          })
         "
       >
         Roll
