@@ -3,6 +3,19 @@ import DiceBox from "./components/DiceBox.vue";
 import Stats from "./components/Stats.vue";
 import { ref } from "vue";
 
+const ws = new WebSocket("ws://127.0.0.1:8080/ws/");
+
+ws.onopen = () => {
+  console.log("Connected to the WebSocket server!");
+  ws.send("Hello from the client!");
+};
+
+ws.onmessage = (event) => {
+  console.log(`Message Received: ${event.data}`);
+};
+
+
+
 const characterName = ref("");
 const currentRoll = ref("");
 const currentRollType = ref("");
