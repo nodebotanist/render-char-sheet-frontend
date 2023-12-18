@@ -5,6 +5,10 @@ import Stats from "./components/Stats.vue";
 function rollDice(value) {
   DiceBox.functions.rollDice(value);
 }
+
+function diceResult(results) {
+  console.log(results);
+}
 </script>
 
 <template>
@@ -15,7 +19,7 @@ function rollDice(value) {
       <input type="text" placeholder="Character Name" id="character-name" />
     </div>
     <div class="pure-u-1-2">
-      <DiceBox />
+      <DiceBox @diceResult="diceResult" />
     </div>
   </div>
   <Stats v-on:diceRoll="rollDice"></Stats>
