@@ -11,6 +11,14 @@ ws.onopen = () => {
 
 ws.onmessage = (event) => {
   console.log(`Message Received: ${event.data}`);
+  let rolls = event.data.replace( /"/g, '').split(",");
+  let rollsBox = document.getElementById("rolls-box");
+  rollsBox.innerHTML = "";
+  rolls.reverse().forEach((roll) => {
+    let rollBox = document.createElement("li");
+    rollBox.innerText = roll;
+    rollsBox.appendChild(rollBox);
+  });
 };
 
 const characterName = ref("");
@@ -29,15 +37,14 @@ function diceResult(results) {
 </script>
 
 <template>
+  <DiceBox @diceResult="diceResult" />
   <div class="pure-g">
-    <div class="pure-u-1-2">
+    <div class="pure-u-1">
       <h1>Character Sheet</h1>
       <label for="character-name">Character Name:</label>
       <input type="text" placeholder="Character Name" v-model="characterName" id="character-name" />
     </div>
-    <div class="pure-u-1-2">
-      <DiceBox @diceResult="diceResult" />
-    </div>
   </div>
   <Stats v-on:diceRoll="rollDice"></Stats>
+  <ul id="rolls-box"></ul>
 </template>

@@ -35,16 +35,16 @@ export default {
       Box.init().then(async (world) => {
         isRolling = false;
       });
-    });
 
-    Box.onRollComplete = (results) => {
-      isRolling = false;      
-      emit("diceResult", results)
-    };
+      Box.onRollComplete = (results) => {
+        isRolling = false;      
+        emit("diceResult", results)
+      };
+    });
   },
 };
 </script>
 
 <template>
-  <div id="dice-box"></div>
+  <div></div>
 </template>
