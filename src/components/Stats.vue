@@ -36,7 +36,7 @@ function emitDiceRollEvent(value) {
             roll: '1d20' +
               (Math.floor((str - 10) / 2) == 0
                 ? ''
-                : '+' + Math.floor((str - 10) / 2)),
+                : ('+' + Math.floor((str - 10) / 2))),
           })
         "
       >
