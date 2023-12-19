@@ -60,9 +60,9 @@ function emitDiceRollEvent(value) {
           emitDiceRollEvent({
             type: 'Dexterity',   
             roll: '1d20' +
-              (Math.floor((str - 10) / 2) == 0
+              (Math.floor((dex - 10) / 2) == 0
                 ? ''
-                : (Math.floor((str - 10) / 2) > 0 ? ('+' + Math.floor((str - 10) / 2)) : ( Math.floor((str - 10) / 2))))
+                : (Math.floor((dex - 10) / 2) > 0 ? ('+' + Math.floor((dex - 10) / 2)) : ( Math.floor((dex - 10) / 2))))
           })
         "
       >
@@ -86,9 +86,9 @@ function emitDiceRollEvent(value) {
           emitDiceRollEvent({
             type: 'Constitution',   
             roll: '1d20' +
-              (Math.floor((str - 10) / 2) == 0
+              (Math.floor((con - 10) / 2) == 0
                 ? ''
-                : (Math.floor((str - 10) / 2) > 0 ? ('+' + Math.floor((str - 10) / 2)) : ( Math.floor((str - 10) / 2))))
+                : (Math.floor((con - 10) / 2) > 0 ? ('+' + Math.floor((con - 10) / 2)) : ( Math.floor((con - 10) / 2))))
           })
         "
       >
@@ -112,9 +112,9 @@ function emitDiceRollEvent(value) {
           emitDiceRollEvent({
             type: 'Intelligence', 
             roll: '1d20' +
-              (Math.floor((str - 10) / 2) == 0
+              (Math.floor((int - 10) / 2) == 0
                 ? ''
-                : (Math.floor((str - 10) / 2) > 0 ? ('+' + Math.floor((str - 10) / 2)) : ( Math.floor((str - 10) / 2))))
+                : (Math.floor((int - 10) / 2) > 0 ? ('+' + Math.floor((int - 10) / 2)) : ( Math.floor((int - 10) / 2))))
           })
         "
       >
@@ -138,9 +138,9 @@ function emitDiceRollEvent(value) {
           emitDiceRollEvent({
             type: 'Wisdom',   
             roll: '1d20' +
-              (Math.floor((str - 10) / 2) == 0
+              (Math.floor((wis - 10) / 2) == 0
                 ? ''
-                : (Math.floor((str - 10) / 2) > 0 ? ('+' + Math.floor((str - 10) / 2)) : ( Math.floor((str - 10) / 2))))
+                : (Math.floor((wis - 10) / 2) > 0 ? ('+' + Math.floor((wis - 10) / 2)) : ( Math.floor((wis - 10) / 2))))
           })
         "
       >
@@ -164,9 +164,9 @@ function emitDiceRollEvent(value) {
           emitDiceRollEvent({
             type: 'Charisma',   
             roll: '1d20' +
-              (Math.floor((str - 10) / 2) == 0
+              (Math.floor((cha - 10) / 2) == 0
                 ? ''
-                : (Math.floor((str - 10) / 2) > 0 ? ('+' + Math.floor((str - 10) / 2)) : ( Math.floor((str - 10) / 2)))),
+                : (Math.floor((cha - 10) / 2) > 0 ? ('+' + Math.floor((cha - 10) / 2)) : ( Math.floor((cha - 10) / 2)))),
           })
         "
       >
