@@ -3,7 +3,7 @@ import DiceBox from "./components/DiceBox.vue";
 import Stats from "./components/Stats.vue";
 import { ref } from "vue";
 
-const ws = new WebSocket("ws://localhost:8080");
+const ws = new WebSocket("wss://character-sheet-backend.onrender.com");
 
 ws.onopen = () => {
   console.log("Connected to the WebSocket server!");
