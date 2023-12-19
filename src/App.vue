@@ -3,18 +3,15 @@ import DiceBox from "./components/DiceBox.vue";
 import Stats from "./components/Stats.vue";
 import { ref } from "vue";
 
-const ws = new WebSocket("ws://127.0.0.1:8080/ws/");
+const ws = new WebSocket("ws://localhost:8080");
 
 ws.onopen = () => {
   console.log("Connected to the WebSocket server!");
-  ws.send("Hello from the client!");
 };
 
 ws.onmessage = (event) => {
   console.log(`Message Received: ${event.data}`);
 };
-
-
 
 const characterName = ref("");
 const currentRoll = ref("");
@@ -27,8 +24,7 @@ function rollDice(roll) {
 }
 
 function diceResult(results) {
-  console.log(`${characterName.value} rolled ${currentRoll.value} as a ${currentRollType.value} check and got a ${results[0].value}!`)
-  console.log(results);
+  ws.send(`${characterName.value || "Someone"} rolled ${currentRoll.value} as a ${currentRollType.value} check and got a ${results[0].value}!`)
 }
 </script>
 

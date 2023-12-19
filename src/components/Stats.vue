@@ -57,12 +57,13 @@ function emitDiceRollEvent(value) {
       <span>Dexterity modifier: {{ Math.floor((dex - 10) / 2) }}</span>
       <button
         @click="
-          emitDiceRollEvent(
-            '1d20' +
-              (Math.floor((dex - 10) / 2) == 0
+          emitDiceRollEvent({
+            type: 'Dexterity',   
+            roll: '1d20' +
+              (Math.floor((str - 10) / 2) == 0
                 ? ''
-                : '+' + Math.floor((dex - 10) / 2)),
-          )
+                : '+' + Math.floor((str - 10) / 2)),
+          })
         "
       >
         Roll
@@ -80,6 +81,19 @@ function emitDiceRollEvent(value) {
     </div>
     <div class="pure-u-1-2">
       <span>Constitution modifier: {{ Math.floor((con - 10) / 2) }}</span>
+      <button
+        @click="
+          emitDiceRollEvent({
+            type: 'Constitution',   
+            roll: '1d20' +
+              (Math.floor((str - 10) / 2) == 0
+                ? ''
+                : '+' + Math.floor((str - 10) / 2)),
+          })
+        "
+      >
+        Roll
+      </button>
     </div>
     <div class="pure-u-1-2">
       <span>Intelligence</span>
@@ -93,6 +107,19 @@ function emitDiceRollEvent(value) {
     </div>
     <div class="pure-u-1-2">
       <span>Intelligence modifier: {{ Math.floor((int - 10) / 2) }}</span>
+      <button
+        @click="
+          emitDiceRollEvent({
+            type: 'Intelligence', 
+            roll: '1d20' +
+              (Math.floor((str - 10) / 2) == 0
+                ? ''
+                : '+' + Math.floor((str - 10) / 2)),
+          })
+        "
+      >
+        Roll
+      </button>
     </div>
     <div class="pure-u-1-2">
       <span>Wisdom</span>
@@ -106,6 +133,19 @@ function emitDiceRollEvent(value) {
     </div>
     <div class="pure-u-1-2">
       <span>Wisdom modifier: {{ Math.floor((wis - 10) / 2) }}</span>
+      <button
+        @click="
+          emitDiceRollEvent({
+            type: 'Wisdom',   
+            roll: '1d20' +
+              (Math.floor((str - 10) / 2) == 0
+                ? ''
+                : '+' + Math.floor((str - 10) / 2)),
+          })
+        "
+      >
+        Roll
+      </button>
     </div>
     <div class="pure-u-1-2">
       <span>Charisma</span>
@@ -119,6 +159,19 @@ function emitDiceRollEvent(value) {
     </div>
     <div class="pure-u-1-2">
       <span>Charisma modifier: {{ Math.floor((cha - 10) / 2) }}</span>
+      <button
+        @click="
+          emitDiceRollEvent({
+            type: 'Charisma',   
+            roll: '1d20' +
+              (Math.floor((str - 10) / 2) == 0
+                ? ''
+                : '+' + Math.floor((str - 10) / 2)),
+          })
+        "
+      >
+        Roll
+      </button>
     </div>
   </div>
 </template>
